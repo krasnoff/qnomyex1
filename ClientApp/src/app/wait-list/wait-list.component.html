@@ -1,0 +1,55 @@
+<div class="wrapper">
+  <form class="form-signin" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="text-center mb-4">
+      <h1 class="h3 mb-3 font-weight-normal">ניהול תורים</h1>
+      <p></p>
+    </div>
+
+    <div class="form-label-group">
+      <label for="inputEmail">שם לקוח</label>
+      <input type="text" id="customerName" class="form-control" placeholder="שם לקוח" required autofocus formControlName="customerName">
+    </div>
+
+    <div class="checkbox mb-3">
+      <label #errorComment class="errorComment"></label>
+    </div>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="profileForm.value.customerName === ''">הכנס לתור</button>
+  </form>
+</div>
+<br />
+<hr />
+<br />
+<div class="wrapper wrapper2">
+  <table class="table table2">
+    <tbody>
+      <tr>
+        <td>{{onlineUser.id}}</td>
+        <td>{{onlineUser.clientName}}</td>
+        <td>{{onlineUser.appointmentDate | date:'shortTime'}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-lg btn-primary btn-block" [disabled]="onlineUser.id === 0" (click)="onUpdateQue()">קרא להבא בתור</button>
+</div>
+<br />
+<hr />
+<br />
+<div class="wrapper wrapper2">
+<table class="table">
+  <thead>
+    <tr>
+      <th>מספר תור</th>
+      <th>שם לקוח</th>
+      <th>שעה</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of waitingList">
+      <td>{{row.id}}</td>
+      <td>{{row.clientName}}</td>
+      <td>{{row.appointmentDate | date:'shortTime'}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>

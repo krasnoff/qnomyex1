@@ -1,0 +1,66 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #e01a76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  direction: rtl;
+
+  .link
+  {
+    cursor: pointer;
+    color: #007bff;
+  }
+
+  .form-signin {
+    width: 100%;
+    max-width: 500px;
+    width: 100%;
+
+    .form-label-group
+    {
+      width: 100%;
+      margin-bottom: 0.5em;
+
+      label
+      {
+        margin-bottom: 0px;
+      }
+
+    }
+
+    .errorComment {
+      color: red;
+      font-weight: 700;
+    }
+
+  }
+}
+
+.wrapper2 {
+  display: block;
+
+  .table2 {
+    border: 1px solid black;
+
+    td {
+      border: 1px solid black;
+    }
+  }
+}
